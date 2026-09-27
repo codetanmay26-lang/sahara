@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <!-- Background with a warm interior and cool exterior gradient -->
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e38" />
+      <stop offset="50%" stop-color="#2c3e50" />
+      <stop offset="100%" stop-color="#34495e" />
+    </linearGradient>
+    <linearGradient id="roomGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2d1f10" />
+      <stop offset="100%" stop-color="#1a1107" />
+    </linearGradient>
+    <linearGradient id="warmLight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff9f43" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#ff9f43" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Room Background -->
+  <rect width="800" height="600" fill="url(#roomGrad)" />
+
+  <!-- Window Frame & View -->
+  <!-- Exterior Sky -->
+  <rect x="150" y="80" width="500" height="400" fill="url(#skyGrad)" rx="10" />
+  
+  <!-- Distant stars/city lights in window -->
+  <circle cx="200" cy="150" r="1.5" fill="#ffffff" opacity="0.8" />
+  <circle cx="280" cy="180" r="2" fill="#f1c40f" opacity="0.6" />
+  <circle cx="450" cy="120" r="1" fill="#ffffff" opacity="0.5" />
+  <circle cx="600" cy="220" r="1.5" fill="#ffffff" opacity="0.7" />
+  
+  <!-- Silhouette of distant Lucknow monuments or trees -->
+  <path d="M 150 480 L 220 400 L 280 430 L 350 380 L 410 420 L 480 390 L 550 440 L 650 370 L 650 480 Z" fill="#111122" opacity="0.7" />
+
+  <!-- Warm indoor light casting from the right side -->
+  <path d="M 650 80 L 800 0 L 800 600 L 650 480 Z" fill="url(#warmLight)" />
+
+  <!-- Window Frame Lines -->
+  <!-- Inner shadow of window border -->
+  <rect x="145" y="75" width="510" height="410" fill="none" stroke="#0a0502" stroke-width="12" rx="14" />
+  <rect x="150" y="80" width="500" height="400" fill="none" stroke="#3e2723" stroke-width="8" rx="10" />
+  <!-- Window Panes (Cross) -->
+  <line x1="400" y1="80" x2="400" y2="480" stroke="#3e2723" stroke-width="6" />
+  <line x1="150" y1="250" x2="650" y2="250" stroke="#3e2723" stroke-width="6" />
+
+  <!-- Elderly Gentleman Silhouette sitting by the window -->
+  <!-- Chair Back -->
+  <path d="M 230 540 C 230 450, 250 410, 270 360 C 280 340, 290 320, 290 300" fill="none" stroke="#2a1508" stroke-width="16" stroke-linecap="round" />
+  
+  <!-- Body / Torso -->
+  <path d="M 320 540 L 320 410 C 320 370, 340 350, 370 340 C 400 330, 420 310, 430 280" fill="none" stroke="#1d2731" stroke-width="50" stroke-linecap="round" />
+  
+  <!-- Head & Neck -->
+  <circle cx="435" cy="220" r="30" fill="#e0a96d" />
+  <!-- Hair (White/Grey hair of senior) -->
+  <path d="M 410 215 C 410 190, 430 180, 455 190 C 465 195, 470 210, 465 225 C 460 215, 450 205, 435 205 C 420 205, 415 210, 410 215 Z" fill="#eceff1" />
+  <path d="M 455 195 C 465 200, 470 210, 468 220 C 460 220, 455 215, 455 210" fill="#cfd8dc" />
+
+  <!-- Glasses on silhouette -->
+  <circle cx="452" cy="222" r="8" fill="none" stroke="#37474f" stroke-width="2" />
+  <line x1="438" y1="220" x2="446" y2="222" stroke="#37474f" stroke-width="2" />
+  
+  <!-- Arm & Hand resting on window sill -->
+  <path d="M 360 410 C 370 420, 390 430, 420 430 C 450 430, 470 410, 490 370 C 495 360, 500 330, 500 290" fill="none" stroke="#1d2731" stroke-width="24" stroke-linecap="round" />
+  <!-- Hand -->
+  <circle cx="500" cy="280" r="10" fill="#e0a96d" />
+
+  <!-- Table with a warm cup of tea casting steam -->
+  <rect x="450" y="460" width="120" height="20" fill="#3e2723" rx="4" />
+  <path d="M 480 460 L 485 435 L 515 435 L 520 460 Z" fill="#d7ccc8" /> <!-- Cup -->
+  <path d="M 515 440 C 525 440, 525 455, 515 455" fill="none" stroke="#d7ccc8" stroke-width="3" /> <!-- Handle -->
+  <!-- Steam rising (soft warm vectors) -->
+  <path d="M 495 425 Q 490 415, 495 405 T 495 385" fill="none" stroke="#ffe0b2" stroke-width="2" opacity="0.5" stroke-linecap="round" />
+  <path d="M 505 428 Q 500 418, 505 408 T 505 388" fill="none" stroke="#ffe0b2" stroke-width="2" opacity="0.4" stroke-linecap="round" />
+
+  <!-- Window Sill -->
+  <rect x="100" y="470" width="600" height="25" fill="#4e342e" rx="3" />
+  <rect x="80" y="495" width="640" height="15" fill="#2d1f10" />
+
+  <!-- Soft text or emblem overlay to reinforce emotional warmth -->
+  <text x="400" y="550" font-family="'Inter', sans-serif" font-size="22" font-weight="600" fill="#ffb03b" text-anchor="middle" letter-spacing="1">SAHAARA</text>
+  <text x="400" y="575" font-family="'Inter', sans-serif" font-size="14" fill="#a1887f" text-anchor="middle">A Loving Companion for Indian Seniors</text>
+</svg>

@@ -1,0 +1,706 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Fonts */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', system-ui, -apple-system, sans-serif;
+
+  /* Official SAHAARA Design System Colors (Light Theme Default) - Soothing Warm system */
+  --bg-primary: #F8FAFC;         /* Soft off-white blue */
+  --bg-secondary: #FAF8F2;       /* Warm cream background */
+  --bg-tertiary: #EEF8F7;        /* Soft teal tint */
+  --bg-alternate-blue: #F5FAFD;  /* Soft blue background */
+  --bg-alternate-teal: #EEF8F7;  /* Soft teal background */
+  --bg-alternate-yellow: #FAF8F2;/* Warm cream background */
+  --bg-gradient-soothing: linear-gradient(180deg, #F8FAFC 0%, #EEF8F7 100%);
+  
+  --text-primary: #1F2937;       /* Charcoal */
+  --text-secondary: #4B5563;     /* Muted Charcoal */
+  --text-muted: #9CA3AF;
+  
+  --border-color: #E7E5E4;       /* Warm grey border */
+  
+  /* Brand Accents */
+  --color-primary: #0D9488;      /* Deep Teal */
+  --color-primary-light: rgba(13, 148, 136, 0.08);
+  --color-primary-dark: #0f766e;
+  
+  --color-secondary: #F59E0B;    /* Saffron */
+  --color-secondary-light: rgba(245, 158, 11, 0.08);
+  --color-secondary-dark: #b45309;
+  
+  --color-accent: #FB7185;       /* Warm Coral */
+  --color-accent-light: rgba(251, 113, 133, 0.08);
+  --color-accent-dark: #f43f5e;
+  
+  --color-danger: #e11d48;
+  --color-danger-light: #ffe4e6;
+  
+  --color-success: #16a34a;
+  --color-success-light: #dcfce7;
+  
+  /* Shadow & Radii Effects */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(27, 38, 59, 0.05), 0 2px 4px -2px rgba(27, 38, 59, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(27, 38, 59, 0.08), 0 4px 6px -4px rgba(27, 38, 59, 0.08);
+  --shadow-premium: 0 20px 25px -5px rgba(13, 148, 136, 0.05), 0 8px 10px -6px rgba(13, 148, 136, 0.05);
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Dark Theme Overrides - Kept subtle, retaining Charcoal aesthetics */
+[data-theme='dark'] {
+  --bg-primary: #111827;         /* Very dark charcoal */
+  --bg-secondary: #1F2937;       /* Dark charcoal */
+  --bg-tertiary: #374151;        /* Muted dark charcoal */
+  
+  --text-primary: #FAFAF9;
+  --text-secondary: #D1D5DB;
+  --text-muted: #6B7280;
+  
+  --border-color: #374151;
+  
+  --color-primary: #14b8a6;      /* Slightly brighter teal */
+  --color-primary-light: rgba(20, 184, 166, 0.15);
+  
+  --color-secondary: #fbbf24;    /* Brighter saffron */
+  --color-secondary-light: rgba(251, 191, 36, 0.15);
+  
+  --color-accent: #fda4af;       /* Brighter coral */
+  --color-accent-light: rgba(253, 164, 175, 0.15);
+}
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: var(--transition-smooth);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Design Tokens & Elements styling */
+
+.glass-card {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(13, 148, 136, 0.08);
+  box-shadow: 0 10px 30px -5px rgba(27, 38, 59, 0.04), 0 4px 6px -2px rgba(13, 148, 136, 0.02);
+  border-radius: var(--radius-lg);
+  transition: var(--transition-smooth);
+}
+
+.hover-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+/* Accessible Layout Rules */
+.senior-theme {
+  --text-size-base: 22px;
+  font-size: var(--text-size-base);
+}
+.senior-theme p, 
+.senior-theme li, 
+.senior-theme span, 
+.senior-theme input, 
+.senior-theme button {
+  font-size: 1.15rem;
+}
+.senior-theme h1 {
+  font-size: 2.75rem;
+  font-weight: 800;
+}
+.senior-theme h2 {
+  font-size: 2rem;
+}
+
+.caregiver-theme {
+  font-size: 16px;
+}
+
+/* Grid Layouts */
+.grid-container {
+  display: grid;
+  gap: 24px;
+}
+
+@media (min-width: 640px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* App Header & Footer Layout */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1 0 auto;
+}
+
+/* Keyframe Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.4); }
+  50% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(13, 148, 136, 0); }
+}
+
+@keyframes wave-pulse {
+  0%, 100% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1); }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Animation Classes */
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 40s linear infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s infinite ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.voice-wave-bar {
+  animation: wave-pulse 1.2s infinite ease-in-out;
+}
+
+/* Accordion Custom Transition */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-content.open {
+  max-height: 200px;
+}
+
+/* ==========================================
+   Accessibility Utilities (Phase 3 Upgrade)
+   ========================================== */
+
+/* 1. Text Scaling Modes */
+.text-scale-normal {
+  --text-multiplier: 1;
+}
+
+.text-scale-large {
+  --text-multiplier: 1.25;
+}
+
+.text-scale-xlarge {
+  --text-multiplier: 1.5;
+}
+
+/* Apply scaling multiplier variables to primary elements in Senior Portal */
+.text-scale-large p,
+.text-scale-large li,
+.text-scale-large span,
+.text-scale-large button,
+.text-scale-large input,
+.text-scale-large select,
+.text-scale-large a {
+  font-size: calc(1.15rem * 1.25) !important;
+}
+.text-scale-large h1 { font-size: calc(2.75rem * 1.25) !important; }
+.text-scale-large h2 { font-size: calc(2rem * 1.25) !important; }
+.text-scale-large h3 { font-size: calc(1.6rem * 1.25) !important; }
+
+.text-scale-xlarge p,
+.text-scale-xlarge li,
+.text-scale-xlarge span,
+.text-scale-xlarge button,
+.text-scale-xlarge input,
+.text-scale-xlarge select,
+.text-scale-xlarge a {
+  font-size: calc(1.15rem * 1.5) !important;
+}
+.text-scale-xlarge h1 { font-size: calc(2.75rem * 1.5) !important; }
+.text-scale-xlarge h2 { font-size: calc(2rem * 1.5) !important; }
+.text-scale-xlarge h3 { font-size: calc(1.6rem * 1.5) !important; }
+
+/* 2. High Contrast Yellow-on-Black Mode overrides */
+.contrast-high {
+  --bg-primary: #000000 !important;
+  --bg-secondary: #000000 !important;
+  --bg-tertiary: #111111 !important;
+  
+  --text-primary: #FFFF00 !important;   /* Yellow */
+  --text-secondary: #FFFFFF !important; /* White */
+  --text-muted: #FFFFFF !important;
+  
+  --border-color: #FFFF00 !important;   /* Yellow */
+  
+  --color-primary: #FFFF00 !important;
+  --color-primary-light: rgba(255, 255, 0, 0.15) !important;
+  --color-primary-dark: #FFFF00 !important;
+  
+  --color-secondary: #FFFF00 !important;
+  --color-secondary-light: rgba(255, 255, 0, 0.15) !important;
+  --color-secondary-dark: #FFFF00 !important;
+  
+  --color-accent: #FFFF00 !important;
+  --color-accent-light: rgba(255, 255, 0, 0.15) !important;
+  
+  --color-danger: #FFFF00 !important;
+  --color-danger-light: rgba(255, 255, 0, 0.15) !important;
+  
+  --color-success: #FFFFFF !important;
+  --color-success-light: rgba(255, 255, 255, 0.15) !important;
+}
+
+.contrast-high .glass-card,
+.contrast-high .hover-card {
+  background-color: #000000 !important;
+  border: 2px solid #FFFF00 !important;
+  color: #FFFFFF !important;
+  box-shadow: none !important;
+}
+
+.contrast-high button,
+.contrast-high a.interactive-btn,
+.contrast-high .quick-action-button {
+  background-color: #000000 !important;
+  color: #FFFF00 !important;
+  border: 2px solid #FFFF00 !important;
+  box-shadow: none !important;
+}
+
+.contrast-high button:hover,
+.contrast-high a.interactive-btn:hover,
+.contrast-high .quick-action-button:hover {
+  background-color: #FFFF00 !important;
+  color: #000000 !important;
+}
+
+/* 3. Reduced Motion Mode disables transitions & keyframes */
+.motion-reduced * {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+}
+
+/* Typing Indicator Animation (Phase 4 Upgrade) */
+.typing-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.5rem 0.75rem;
+}
+
+.typing-dot {
+  width: 7px;
+  height: 7px;
+  background-color: var(--text-secondary);
+  border-radius: 50%;
+  animation: typingBounce 1.4s infinite ease-in-out both;
+}
+
+.typing-dot:nth-child(1) { animation-delay: 0s; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingBounce {
+  0%, 80%, 100% { 
+    transform: scale(0.6); 
+    opacity: 0.5; 
+  }
+  40% { 
+    transform: scale(1.2) translateY(-4px); 
+    opacity: 1; 
+  }
+}
+
+/* Premium Background Artwork Watermarks (Low Opacity motifs) */
+.sahaara-bg-art {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cpath d='M70 0 C74 25, 95 46, 120 50 C95 54, 74 75, 70 100 C66 75, 45 54, 20 50 C45 46, 66 25, 70 0 Z M70 35 C72 45, 80 53, 90 55 C80 57, 72 65, 70 75 C68 65, 60 53, 50 55 C60 53, 68 45, 70 35 Z' fill='%230D9488' fill-opacity='0.02'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* Parallax and premium float animations */
+.premium-float {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(0.5deg); }
+}
+
+.memory-reveal {
+  opacity: 0;
+  animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes reveal {
+  from { transform: scale(0.95) translateY(12px); opacity: 0; }
+  to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* Celebration Confetti Effect */
+.confetti-active {
+  position: relative;
+  overflow: hidden;
+}
+.confetti-active::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(circle at 10% 10%, #F59E0B 3px, transparent 4px),
+    radial-gradient(circle at 30% 20%, #FB7185 4px, transparent 5px),
+    radial-gradient(circle at 50% 15%, #0D9488 3px, transparent 4px),
+    radial-gradient(circle at 70% 30%, #F59E0B 5px, transparent 6px),
+    radial-gradient(circle at 90% 10%, #FB7185 4px, transparent 5px);
+  background-size: 100% 100%;
+  opacity: 0.6;
+  animation: confetti-fall 4s linear infinite;
+}
+@keyframes confetti-fall {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100%); }
+}
+
+/* SAATHI AI Orb Animations and Styles */
+.saathi-orb-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: radial-gradient(135deg, var(--color-primary-light) 0%, transparent 75%);
+  border-radius: var(--radius-lg);
+  margin-bottom: 1.5rem;
+}
+
+.saathi-orb {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  position: relative;
+  transition: var(--transition-smooth);
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.saathi-orb-idle {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  animation: orb-idle-glow 4s infinite ease-in-out;
+}
+
+.saathi-orb-listening {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent-dark) 100%);
+  animation: orb-listening-glow 1.2s infinite alternate ease-in-out;
+}
+
+.saathi-orb-processing {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  animation: orb-processing-rotate 2.5s infinite linear;
+}
+
+.saathi-orb-speaking {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%);
+  animation: orb-speaking-pulse 1.2s infinite ease-in-out;
+}
+
+/* Inner glow ring */
+.saathi-orb-glow {
+  position: absolute;
+  top: -8px; left: -8px; right: -8px; bottom: -8px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.saathi-orb-idle .saathi-orb-glow {
+  color: var(--color-primary);
+  animation: scale-up-fade 4s infinite ease-in-out;
+}
+
+.saathi-orb-listening .saathi-orb-glow {
+  color: var(--color-secondary);
+  animation: scale-up-fade-fast 1.2s infinite alternate ease-in-out;
+}
+
+.saathi-orb-processing .saathi-orb-glow {
+  color: var(--color-primary-dark);
+  animation: scale-up-fade 1.8s infinite linear;
+}
+
+.saathi-orb-speaking .saathi-orb-glow {
+  color: var(--color-accent);
+  animation: scale-up-fade-fast 1s infinite alternate ease-in-out;
+}
+
+@keyframes orb-idle-glow {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(13,148,136,0.3)); }
+  50% { transform: scale(1.08); filter: drop-shadow(0 0 20px rgba(13,148,136,0.5)); }
+}
+
+@keyframes orb-listening-glow {
+  from { transform: scale(1); filter: drop-shadow(0 0 12px rgba(245,158,11,0.4)); }
+  to { transform: scale(1.18); filter: drop-shadow(0 0 24px rgba(251,113,133,0.7)); }
+}
+
+@keyframes orb-processing-rotate {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.1); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes orb-speaking-pulse {
+  0%, 100% { transform: scale(1.04) scaleY(0.96); }
+  50% { transform: scale(1.14) scaleY(1.06); }
+}
+
+@keyframes scale-up-fade {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+
+@keyframes scale-up-fade-fast {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.45); opacity: 0; }
+}
+
+/* --- Phase 12A: Elder-First Emotional Experience Redesign Styles --- */
+
+/* Comforting SAATHI Orb state */
+.saathi-orb-comforting {
+  background: linear-gradient(135deg, var(--color-accent) 0%, #a855f7 100%);
+  animation: orb-comforting-glow 2.5s infinite ease-in-out;
+}
+
+.saathi-orb-comforting .saathi-orb-glow {
+  color: #a855f7;
+  animation: scale-up-fade 2s infinite ease-in-out;
+}
+
+@keyframes orb-comforting-glow {
+  0%, 100% { transform: scale(1.05); filter: drop-shadow(0 0 15px rgba(251,113,133,0.5)); }
+  50% { transform: scale(1.15); filter: drop-shadow(0 0 30px rgba(168,85,247,0.7)); }
+}
+
+/* Diya glow animation for devotional aura */
+.diya-glow {
+  animation: diya-pulse 1.8s infinite alternate ease-in-out;
+  transform-origin: bottom center;
+}
+
+@keyframes diya-pulse {
+  0% { transform: scale(1); filter: drop-shadow(0 0 4px #FF9933); }
+  100% { transform: scale(1.2) translateY(-2px); filter: drop-shadow(0 0 12px #FF5500); }
+}
+
+/* Indian Temple Arch CSS backdrop overlay */
+.temple-arch-bg {
+  background-image: 
+    radial-gradient(ellipse at bottom, transparent 60%, rgba(245, 158, 11, 0.05) 62%, rgba(245, 158, 11, 0.1) 65%, transparent 70%),
+    radial-gradient(circle at top, rgba(245, 158, 11, 0.02) 0%, transparent 60%);
+  background-color: var(--bg-primary);
+}
+
+/* Polaroid Memory Wall card styling */
+.polaroid-card {
+  background: #ffffff;
+  padding: 12px 12px 24px 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.03);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 4px;
+  transition: var(--transition-bounce);
+  display: flex;
+  flex-direction: column;
+}
+
+.polaroid-card:hover {
+  transform: scale(1.04) rotate(0deg) !important;
+  box-shadow: 0 18px 36px rgba(0,0,0,0.12);
+  z-index: 10;
+}
+
+.polaroid-caption {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  letter-spacing: -0.5px;
+}
+
+/* Soft reveal transitions */
+.fade-in-gentle {
+  animation: fadeInGentle 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInGentle {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Phase 12B: Global Elder visual systems --- */
+.sahaara-bg-watermark {
+  position: relative;
+  z-index: 1;
+}
+
+.sahaara-bg-watermark::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120' width='120' height='120' opacity='0.02'%3E%3Cpath d='M60 10 C65 35, 85 55, 110 60 C85 65, 65 85, 60 110 C55 85, 35 65, 10 60 C35 55, 55 35, 60 10 Z' fill='%230D9488'/%3E%3Ccircle cx='60' cy='60' r='16' fill='none' stroke='%23F59E0B' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.sahaara-bg-watermark-direct {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120' width='120' height='120' opacity='0.025'%3E%3Cpath d='M60 10 C65 35, 85 55, 110 60 C85 65, 65 85, 60 110 C55 85, 35 65, 10 60 C35 55, 55 35, 60 10 Z' fill='%230D9488'/%3E%3Ccircle cx='60' cy='60' r='16' fill='none' stroke='%23F59E0B' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* Calm Transitions & Animations */
+@keyframes slow-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.slow-float {
+  animation: slow-float 6s ease-in-out infinite;
+}
+
+.soft-zoom {
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.soft-zoom:hover {
+  transform: scale(1.04) !important;
+}
+
+@keyframes image-reveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+.image-reveal {
+  animation: image-reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes scroll-fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.scroll-fade-in {
+  animation: scroll-fade-in 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Warm, Emotional Elder-Care Atmospheres */
+.card-teal-tint {
+  background: rgba(13, 148, 136, 0.03) !important;
+  border: 1px solid rgba(13, 148, 136, 0.08) !important;
+  box-shadow: 0 8px 20px -4px rgba(13, 148, 136, 0.04) !important;
+}
+
+.card-saffron-tint {
+  background: rgba(245, 158, 11, 0.04) !important;
+  border: 1px solid rgba(245, 158, 11, 0.08) !important;
+  box-shadow: 0 8px 20px -4px rgba(245, 158, 11, 0.04) !important;
+}
+
+.emotional-glow-teal {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.04) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.emotional-glow-saffron {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.03) 0%, transparent 70%);
+  filter: blur(35px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floating-particle-glow {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-secondary);
+  opacity: 0.04;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float-glow-particle 14s infinite ease-in-out;
+}
+
+@keyframes float-glow-particle {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-40px) translateX(25px); }
+}
+
+
+
+
